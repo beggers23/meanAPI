@@ -13,7 +13,7 @@ app.use(express.static( 'client/'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/meanAPI" );
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/meanAPI" );
 
 app.use('/', indexRouter);
 app.use('/api/data', apiRouter);
