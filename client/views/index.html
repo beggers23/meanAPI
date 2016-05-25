@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app='MeanAPI'>
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN API</title>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id='svg'>
+      <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='1000%'>
+        <defs id='defs4'>
+      		<filter color-interpolation-filters='sRGB' id='f'>
+      			<feTurbulence type='fractalNoise' baseFrequency='100 .85' numOctaves='1'/>
+      		</filter>
+      		<pattern patternUnits='userSpaceOnUse' patternTransform='translate(0 100)' id='l' width='100%' height='50'>
+      			<line x1='-10%' y1='1' x2='110%' y2='1' stroke='#0b58f4' stroke-width='1'/>
+      		</pattern>
+      		<pattern patternUnits='userSpaceOnUse' id='p' width='100' height='100'>
+      			<rect x='-10' y='-10' height='120' width='120' style='filter:url(#f)' />
+      		</pattern>
+      	</defs>
+      	<rect x='-10%' y='-10%' height='120%' width='120%' style='fill:url(#p)' />
+      	<rect x='-10%' y='80' height='100%' width='120%' style='fill:url(#l)' />
+      	<line x1='200' y1='-5%' x2='200' y2='105%' stroke='#856' />
+      	<rect x='-50%' y='-50%' height='200%' width='200%' style='fill:#fff;fill-opacity:0.5;'/>
+      </svg>
+    </div>
+
+    <div id='main' ng-controller='MainController'>
+      <div class='clears'>
+        <button id='newList' ng-click='newList()'>New List</button>
+        <button id='clear' ng-click='clearList()'>Clear List </button>
+      </div>
+
+      <header>
+        <h1>Grocery List</h1>
+      </header>
+
+      <div id='list-content'>
+        <div id='list'>
+          &nbsp
+          <div ng-repeat='item in groceries' ng-class="{'retrieved': item.retrieved}">
+              <button id='delete' ng-click='deleteItem(item)'>X</button><span class='item' ng-click='updateItem(item)'>{{ item.food }} for ${{ item.price }}</span>
+          </div>
+        </div>
+        <div id='form'>
+          <form ng-submit='createNew( item )'>
+            <input id='food-input' type='text' ng-model='item.food' placeholder='Food Name'>
+            <input id='price-input' type='number' ng-model='item.price' placeholder='Price'>
+            <button type="submit" name="button">Add To List</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/scripts.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+body{
+  font-family: 'Architects Daughter', cursive;
+  font-variant: small-caps;
+}
+
+.retrieved {
+  text-decoration: line-through;
+}
+
+#svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  position: absolute;
+  top: -20px;
+  padding: 0;
+  margin: 0;
+  left: 250px;
+  font-size: 3em;
+}
+
+h1{
+  padding:0;
+  margin:0;
+}
+
+button {
+  font-family: 'Architects Daughter', cursive;
+  font-variant: small-caps;
+  border: none;
+  background: transparent;
+  font-size: 2em;
+}
+#delete {
+  color: red;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.clears {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+}
+#clear {
+  color: forestgreen;
+}
+#newList {
+  color: coral;
+}
+
+#list-content {
+  position: absolute;
+  top: 78px;
+  left: 100px;
+  width: 100%;
+}
+#list {
+  margin-left: 2em;
+}
+#form {
+  margin-left: 8em;
+}
+input{
+  color: black;
+  border: none;
+  background: transparent;
+  font-size: 1.8em;
+  font-family: 'Architects Daughter', cursive;
+  font-variant: small-caps;
+}
+button:focus{
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+#food-input{
+  width: 6em;
+}
+#price-input {
+  width: 4em;
+}
+
+.item {
+  font-size: 2em;
+  margin-left: 2em;
+  line-height: 1.58;
+}
+.item:hover {
+  cursor: pointer;
+}
