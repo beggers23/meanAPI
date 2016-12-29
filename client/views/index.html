@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>MEAN Grocery List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js" charset="utf-8"></script>
@@ -29,14 +30,14 @@
     </div>
 
     <div id='main' ng-controller='MainController'>
-      <div class='clears'>
-        <button id='newList' ng-click='newList()'>New List</button>
-        <button id='clear' ng-click='clearList()'>Clear List </button>
-      </div>
-
       <header>
         <h1>Grocery List</h1>
       </header>
+
+      <div class='clears'>
+        <button id='newList' ng-click='newList()'>Fresh List</button>
+        <button id='clear' ng-click='clearList()'>Clear List </button>
+      </div>
 
       <div id='list-content'>
         <div id='list'>
